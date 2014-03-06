@@ -11,6 +11,20 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+def configDir = System.properties['CONFIG_DIR']
+def configFile = System.properties['CONFIG_FILE']
+
+grails.config.locations = []
+
+if (configDir) {
+    grails.config.locations << "file:${configDir}/global-config.groovy"
+}
+
+if (configDir || configFile) {
+    grails.config.locations << (configFile ? "file:${configFile}" : "file:${configDir}/${appName}-config.groovy")
+}
+
+
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
@@ -86,6 +100,19 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+
+        personalAssistant {
+            personal {
+                firstName = 'Anne'
+                lastName = 'Griffin'
+                age = 26
+            }
+
+            professional {
+                title = 'P.A.'
+                placeOfWork = 'Office'
+            }
+        }
     }
     production {
         grails.logging.jul.usebridge = false

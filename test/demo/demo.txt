@@ -1,0 +1,13 @@
+1. Call demo controller using:
+   curl -v http://localhost:8080/reloading-grails-app/demo
+
+2. Alter config file at test/demo/external-config.groovy
+
+3. Call demo controller again to demonstrate nothing has changed.
+   curl -v http://localhost:8080/reloading-grails-app/demo
+
+4. Call configure controller
+   curl -v http://localhost:8080/reloading-grails-app/configure
+
+5. Call demo controller again to demonstrate reconfigured bean.
+   curl -v http://localhost:8080/reloading-grails-app/demo
