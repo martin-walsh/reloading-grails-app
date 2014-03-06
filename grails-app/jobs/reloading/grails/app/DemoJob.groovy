@@ -1,7 +1,6 @@
 package reloading.grails.app
 
 import org.quartz.JobExecutionContext
-import org.quartz.Trigger
 import org.quartz.impl.triggers.CronTriggerImpl
 import org.springframework.beans.factory.InitializingBean
 
@@ -32,7 +31,6 @@ class DemoJob implements InitializingBean {
         println "Running at ${new Date().format('yyyy-MM-dd HH:mm:ss')} with cronExpression: '$cronExpression'"
     }
 
-    @Override
     void reconfigure(JobExecutionContext context) {
         def trigger = context.trigger
         if (trigger instanceof CronTriggerImpl) {
