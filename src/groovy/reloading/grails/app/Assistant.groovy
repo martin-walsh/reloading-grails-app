@@ -1,7 +1,5 @@
 package reloading.grails.app
 
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
-
 class Assistant implements DynamicallyConfigurable {
     String firstName
     String lastName
