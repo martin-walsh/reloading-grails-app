@@ -16,3 +16,16 @@ Use application:
 
 5. Call demo controller again to demonstrate reconfigured bean.
    curl -v http://localhost:8080/reloading-grails-app/demo
+
+Checking Job:
+1. Job logs to console.
+
+2. Alter config file at test/demo/external-config.groovy with disabled job.
+
+3. Call configure controller
+   curl -v http://localhost:8080/reloading-grails-app/configure
+
+4. Alter config file at test/demo/external-config.groovy with enabled job & new cronExpression.
+
+4. Call configure controller
+   curl -v http://localhost:8080/reloading-grails-app/configure

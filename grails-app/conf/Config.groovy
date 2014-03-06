@@ -113,6 +113,11 @@ environments {
                 placeOfWork = 'Office'
             }
         }
+
+        job {
+            enabled = true
+            cronExpression = '*/10 * * * * ? *'
+        }
     }
     production {
         grails.logging.jul.usebridge = false

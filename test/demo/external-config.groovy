@@ -11,3 +11,8 @@ personalAssistant {
     }
 }
 
+job {
+    enabled = true
+    cronExpression = '*/5 * * * * ? *'
+}
+
