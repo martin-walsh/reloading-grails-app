@@ -1,3 +1,8 @@
+Setup application:
+   grails -DCONFIG_FILE=test/demo/external-config.groovy run-app
+
+
+Use application:
 1. Call demo controller using:
    curl -v http://localhost:8080/reloading-grails-app/demo
 
